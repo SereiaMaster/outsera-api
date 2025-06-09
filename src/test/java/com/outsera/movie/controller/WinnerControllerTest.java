@@ -41,4 +41,26 @@ public class WinnerControllerTest {
                 .andExpect(jsonPath("$.max").isArray());
     }
 
+    @Test
+    void shouldReturnMinIntervalWinnersCorrectStructure() throws Exception {
+        mockMvc.perform(get("/winners/min-interval")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].producer", notNullValue()))
+                .andExpect(jsonPath("$[0].interval", notNullValue()))
+                .andExpect(jsonPath("$[0].previousWin", notNullValue()))
+                .andExpect(jsonPath("$[0].followingWin", notNullValue()));
+    }
+
+    @Test
+    void shouldReturnMaxIntervalWinnersCorrectStructure() throws Exception {
+        mockMvc.perform(get("/winners/max-interval")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].producer", notNullValue()))
+                .andExpect(jsonPath("$[0].interval", notNullValue()))
+                .andExpect(jsonPath("$[0].previousWin", notNullValue()))
+                .andExpect(jsonPath("$[0].followingWin", notNullValue()));
+    }
+
 }

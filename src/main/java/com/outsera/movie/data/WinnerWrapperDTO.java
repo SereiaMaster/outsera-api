@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WinnerWrapper {
+public class WinnerWrapperDTO {
 
     private List<WinnerIntervalDTO> min = new ArrayList<>();
     private List<WinnerIntervalDTO> max = new ArrayList<>();

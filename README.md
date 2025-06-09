@@ -26,8 +26,25 @@ To start the application, run the following class:
 
 src/main/java/com/outsera/movie/MovieApplication.java
 
+## Requirements
+Movielist.csv with data in resources folder
+
+- Header data
+
+`year;title;studios;producers;winner`
+
 ## API
 Get Producers with Min and Max consecutive Awards
 ```bash
 GET http://localhost:8080/winners/min-max-interval
+```
+
+Get Producers with Min consecutive Awards
+```bash
+GET http://localhost:8080/winners/min-interval
+```
+
+Get Producers with Max consecutive Awards
+```bash
+GET http://localhost:8080/winners/max-interval
 ```
